@@ -9,34 +9,59 @@ Ce script doit être exécuté **directement après une nouvelle installation de
 ## Prérequis
 
 - **Administrateur** : Vous devez être administrateur de votre machine pour exécuter ce script.
-- **Connexion Internet** : Vous devez avec une connexion internet avant de lancer le script pour qu'il soit fonctionnel.
+- **Connexion Internet** : Vous devez avoir une connexion internet avant de lancer le script pour qu'il soit fonctionnel.
 
 
 
-## Instructions - README NON TERMINE
+## Instructions
 
-**EN COURS DE FINITION**
-
-1. **Ouvrir PowerShell en tant qu'administrateur** :
-   - Cliquez avec le bouton droit sur le menu Démarrer et sélectionnez "Terminal (administrateur)".
-![alt text](image/terminal.png)
+**Ouvrir PowerShell en tant qu'administrateur** :
+   - Cliquez avec le bouton droit sur le menu Démarrer et sélectionnez **Terminal (administrateur)**.  
+![terminal](image/terminal.png)
 
 
 
-#### Méthode 1 : via l'outil git clone
-   - Faire un git clone du repository et lancer le projet via la commande 
-   
+### Méthode 1 : Git Clone
+   - Dans votre powershell, taper la commande suivante pour récupérer le projet sur votre machine.   
 ```powershell
-PowerShell -ExecutionPolicy Unrestricted -File "chemin\vers\windows_cleanup.ps1"
+git clone https://github.com/AureDM/Windows_Cleanup.git
 ```
 
-#### Méthode 2 : Créer le script avec un copier/coller du fichier 
-2. **Exécuter le script** :
-   - Copiez le contenu du script dans la fenêtre PowerShell.
-   - Appuyez sur Entrée pour exécuter le script.
-   - Lancer le projet via la commande :
+- Déplacez vous dans le dossier du projet
 ```powershell
-PowerShell -ExecutionPolicy Unrestricted -File "chemin\vers\windows_cleanup.ps1"
+cd .\Windows_Cleanup\
+```
+
+- Executer le script
+```powershell
+PowerShell -ExecutionPolicy Unrestricted -File ".\windows_cleanup.ps1"
+```
+
+### Méthode 2 : Télécharger le fichier
+- Sur Git Hub, cliquer sur le script **windows_cleanup.ps1**
+- Télécharger le fichier :  
+![dl](image/dl.png)
+- Déplacez vous à l'endroit où le fichier s'est téléchargé, probablement dans **Téléchargements** :
+```powershell
+cd .\Downloads\
+```
+- Executer le script
+```powershell
+PowerShell -ExecutionPolicy Unrestricted -File ".\windows_cleanup.ps1"
+```
+
+### Méthode 3 : Copier/Coller le script dans un fichier 
+- Sur Git Hub, cliquer sur le script **windows_cleanup.ps1**
+- Copier le fichier :  
+![copy](image/copy.png)
+- Sur votre machine, créer un fichier ps1 :
+```powershell
+notepad.exe windows_cleanup.ps1
+```
+- Coller le fichier
+- Executer le script
+```powershell
+PowerShell -ExecutionPolicy Unrestricted -File ".\windows_cleanup.ps1"
 ```
 
 ## Applications désinstallées
