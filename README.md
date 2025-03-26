@@ -1,6 +1,6 @@
 # Windows Cleanup Script
 
-Ce script PowerShell permet de faire un nettoyage des applications préinstallées après une installation fraîche de Windows. Il est particulièrement utile pour les utilisateurs soucieux d'avoir seulement les applications qu'ils souhaitent sur leur système d'exploitation et d'avoir une installation plus légère et personnalisée de Windows.
+Ce script PowerShell permet de faire un nettoyage automatique des applications préinstallées après une installation fraîche de Windows. Il est particulièrement utile pour les utilisateurs soucieux d'avoir seulement les applications qu'ils souhaitent sur leur système d'exploitation et d'avoir une installation plus légère et personnalisée de Windows. Vous avez 3 méthodes à votre guise pour lancer ce script.
 
 ## Quand exécuter ce script ?
 
@@ -17,8 +17,10 @@ Ce script doit être exécuté **directement après une nouvelle installation de
 
 **Ouvrir PowerShell en tant qu'administrateur** :
    - Cliquez avec le bouton droit sur le menu Démarrer et sélectionnez **Terminal (administrateur)**.  
-![terminal](image/terminal.png)
 
+<div style="text-align: center;">
+  <img src="image/terminal.png" alt="Description de l'image" style="max-width: 100%; height: auto;">
+</div>
 
 
 ### Méthode 1 : Git Clone
@@ -38,22 +40,27 @@ PowerShell -ExecutionPolicy Unrestricted -File ".\windows_cleanup.ps1"
 ```
 
 ### Méthode 2 : Télécharger le fichier
-- Sur Git Hub, cliquer sur le script **windows_cleanup.ps1**
+- Sur Git Hub, cliquer sur le fichier du script : **windows_cleanup.ps1**
 - Télécharger le fichier :  
-![dl](image/dl.png)
+
+<div style="text-align: center;">
+  <img src="image/dl.png" alt="Description de l'image" style="max-width: 100%; height: auto;">
+</div>
+
 - Déplacez vous à l'endroit où le fichier s'est téléchargé, probablement dans **Téléchargements** :
 ```powershell
 cd .\Downloads\
 ```
-- Executer le script
+- Executer le script 
 ```powershell
 PowerShell -ExecutionPolicy Unrestricted -File ".\windows_cleanup.ps1"
 ```
 
 ### Méthode 3 : Copier/Coller le script dans un fichier 
-- Sur Git Hub, cliquer sur le script **windows_cleanup.ps1**
+- Sur Git Hub, cliquer sur le script : **windows_cleanup.ps1**
 - Copier le fichier :  
 ![copy](image/copy.png)
+
 - Sur votre machine, créer un fichier ps1 :
 ```powershell
 notepad.exe windows_cleanup.ps1
@@ -64,7 +71,7 @@ notepad.exe windows_cleanup.ps1
 PowerShell -ExecutionPolicy Unrestricted -File ".\windows_cleanup.ps1"
 ```
 
-## Applications désinstallées
+## Quelles applications sont désinstallées ?
 
 - Obtenir de l'aide
 - Power Automate
@@ -95,31 +102,37 @@ PowerShell -ExecutionPolicy Unrestricted -File ".\windows_cleanup.ps1"
 - Windows Media Player Legacy
 
 
-## Désinstallation manuelle
 
-- **LinkedIn** :
+## Et si nous désinstallions encore d'autres applications ?
 
-   * Vous pouvez apercevoir l'application **LinkedIn** dans le menu démarrer. Or, il n'est pas réellement installé c'est seulement un alias pour installer l'application. **Désinstaller** l'application en réalisant un clic droit :
+- ### Désinstaller LinkedIn
 
-![Suppression LinkedIn](image/linkedIn.png)
+   - Vous pouvez apercevoir l'application **LinkedIn** dans le menu démarrer. Or, il n'est pas réellement installé. C'est seulement un alias pour installer l'application.  
 
+      **Désinstaller** l'application en réalisant un clic droit sur le logo **LinkedIn** :
 
-## Applications non désinstallées
+<div style="text-align: center;">
+  <img src="image/linkedIn.png" alt="Description de l'image" style="max-width: 100%; height: auto;">
+</div>
 
-Il est possible de désinstaller les applications à votre souhait, comme ceci
+- ### Désinstaller d'autres applications toujours
 
-/ ! \ Veuillez remplacer le **I** par **|** pour que la commande fonctionne
+   * Il est possible de désinstaller les applications à votre souhait en utilisant également le Terminal, via ce tableau :  
+
+      ⚠️ *Microsoft Edge : Penser tout de même à garder un navigateur sous le bras*
+
 
 | Nom de l'application       | Commande PowerShell pour désinstaller                                     |
 |----------------------------|---------------------------------------------------------------------------|
-| Bloc-notes                  | `Get-AppxPackage *notepad* I Remove-AppxPackage`                                 |
-| Calculatrice               | `Get-AppxPackage *calculator* I Remove-AppxPackage`                             |
-| Caméra                     | `Get-AppxPackage *camera* I Remove-AppxPackage`                               |
-| Bureau à distance          | `Get-AppxPackage *remote* I Remove-AppxPackage`                                |
-| Horloge Windows            | `Get-AppxPackage *alarms* I Remove-AppxPackage`                                |
-| Lecteur multimédia         | `Get-AppxPackage *media* I Remove-AppxPackage`                                |
-| Microsoft Edge (Attention a avoir un navigateur)             | `Get-AppxPackage *MicrosoftEdge* I Remove-AppxPackage`                     |
-| Outil Capture d'écran      | `Get-AppxPackage *screen* I Remove-AppxPackage`                               |
-| Pense-bêtes                | `Get-AppxPackage *sticky* I Remove-AppxPackage`                               |
-| Photos                     | `Get-AppxPackage *photos* I Remove-AppxPackage`                               |
+| Bloc-notes                 | `Get-AppxPackage *notepad* \| Remove-AppxPackage`                         |
+| Calculatrice               | `Get-AppxPackage *calculator* \| Remove-AppxPackage`                      |
+| Caméra                     | `Get-AppxPackage *camera* \| Remove-AppxPackage`                          |
+| Bureau à distance          | `Get-AppxPackage *remote* \| Remove-AppxPackage`                          |
+| Horloge Windows            | `Get-AppxPackage *alarms* \| Remove-AppxPackage`                          |
+| Lecteur multimédia         | `Get-AppxPackage *media* \| Remove-AppxPackage`                           |
+| ⚠️ Microsoft Edge          | `Get-AppxPackage *MicrosoftEdge* \| Remove-AppxPackage`                   |
+| Outil Capture d'écran      | `Get-AppxPackage *screen* \| Remove-AppxPackage`                          |
+| Pense-bêtes                | `Get-AppxPackage *sticky* \| Remove-AppxPackage`                          |
+| Photos                     | `Get-AppxPackage *photos* \| Remove-AppxPackage`                          |
+
 
